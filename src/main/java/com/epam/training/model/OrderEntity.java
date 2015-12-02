@@ -1,7 +1,9 @@
 package com.epam.training.model;
 
+import org.hibernate.annotations.Type;
+import org.joda.time.LocalDateTime;
+
 import javax.persistence.*;
-import java.sql.Timestamp;
 
 /**
  * Created by Mao Shaco on 12/3/2015.
@@ -10,7 +12,7 @@ import java.sql.Timestamp;
 @Table(name = "order", schema = "", catalog = "example")
 public class OrderEntity {
     private int id;
-    private Timestamp timestamp;
+    private LocalDateTime timestamp;
     private int expense;
     private RequestEntity requestByRequestId;
     private RoomEntity roomByRoomId;
@@ -27,11 +29,13 @@ public class OrderEntity {
 
     @Basic
     @Column(name = "timestamp")
-    public Timestamp getTimestamp() {
+    @Type(type="org.jadira.usertype.dateandtime.joda.PersistentLocalDateTime")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    public LocalDateTime getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Timestamp timestamp) {
+    public void setTimestamp(LocalDateTime timestamp) {
         this.timestamp = timestamp;
     }
 

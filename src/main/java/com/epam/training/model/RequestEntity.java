@@ -1,7 +1,9 @@
 package com.epam.training.model;
 
+import org.hibernate.annotations.Type;
+import org.joda.time.LocalDate;
+
 import javax.persistence.*;
-import java.sql.Date;
 
 /**
  * Created by Mao Shaco on 12/3/2015.
@@ -10,8 +12,8 @@ import java.sql.Date;
 @Table(name = "request", schema = "", catalog = "example")
 public class RequestEntity {
     private int id;
-    private Date checkIn;
-    private Date checkOut;
+    private LocalDate checkIn;
+    private LocalDate checkOut;
     private OrderEntity ordersById;
     private SuiteEntity suiteBySuiteId;
     private ClientEntity clientByClientId;
@@ -29,21 +31,23 @@ public class RequestEntity {
 
     @Basic
     @Column(name = "check_in")
-    public Date getCheckIn() {
+    @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentLocalDate")
+    public LocalDate getCheckIn() {
         return checkIn;
     }
 
-    public void setCheckIn(Date checkIn) {
+    public void setCheckIn(LocalDate checkIn) {
         this.checkIn = checkIn;
     }
 
     @Basic
     @Column(name = "check_out")
-    public Date getCheckOut() {
+    @Type(type = "org.jadira.usertype.dateandtime.joda.PersistentLocalDate")
+    public LocalDate getCheckOut() {
         return checkOut;
     }
 
-    public void setCheckOut(Date checkOut) {
+    public void setCheckOut(LocalDate checkOut) {
         this.checkOut = checkOut;
     }
 
