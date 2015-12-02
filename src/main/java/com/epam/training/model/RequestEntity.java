@@ -12,7 +12,9 @@ public class RequestEntity {
     private int id;
     private Date checkIn;
     private Date checkOut;
-    private ClientEntity clientByClientEntityId;
+    private OrderEntity ordersById;
+    private SuiteEntity suiteBySuiteId;
+    private ClientEntity clientByClientId;
     private BedEntity bedByBedId;
 
     @Id
@@ -67,14 +69,33 @@ public class RequestEntity {
         return result;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "client_id", referencedColumnName = "id", nullable = false)
-    public ClientEntity getClientByClientEntityId() {
-        return clientByClientEntityId;
+    @OneToOne(mappedBy = "requestByRequestId")
+    public OrderEntity getOrdersById() {
+        return ordersById;
     }
 
-    public void setClientByClientEntityId(ClientEntity clientByClientEntityId) {
-        this.clientByClientEntityId = clientByClientEntityId;
+    public void setOrdersById(OrderEntity ordersById) {
+        this.ordersById = ordersById;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "suite_id", referencedColumnName = "id", nullable = false)
+    public SuiteEntity getSuiteBySuiteId() {
+        return suiteBySuiteId;
+    }
+
+    public void setSuiteBySuiteId(SuiteEntity suiteBySuiteId) {
+        this.suiteBySuiteId = suiteBySuiteId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "client_id", referencedColumnName = "id", nullable = false)
+    public ClientEntity getClientByClientId() {
+        return clientByClientId;
+    }
+
+    public void setClientByClientId(ClientEntity clientByClientId) {
+        this.clientByClientId = clientByClientId;
     }
 
     @ManyToOne

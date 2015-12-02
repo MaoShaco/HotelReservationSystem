@@ -12,6 +12,8 @@ public class OrderEntity {
     private int id;
     private Timestamp timestamp;
     private int expense;
+    private RequestEntity requestByRequestId;
+    private RoomEntity roomByRoomId;
 
     @Id
     @Column(name = "id")
@@ -63,5 +65,25 @@ public class OrderEntity {
         result = 31 * result + (timestamp != null ? timestamp.hashCode() : 0);
         result = 31 * result + expense;
         return result;
+    }
+
+    @OneToOne
+    @JoinColumn(name = "request_id", referencedColumnName = "id", nullable = false)
+    public RequestEntity getRequestByRequestId() {
+        return requestByRequestId;
+    }
+
+    public void setRequestByRequestId(RequestEntity requestByRequestId) {
+        this.requestByRequestId = requestByRequestId;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "room_id", referencedColumnName = "id", nullable = false)
+    public RoomEntity getRoomByRoomId() {
+        return roomByRoomId;
+    }
+
+    public void setRoomByRoomId(RoomEntity roomByRoomId) {
+        this.roomByRoomId = roomByRoomId;
     }
 }

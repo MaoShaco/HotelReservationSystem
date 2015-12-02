@@ -1,6 +1,7 @@
 package com.epam.training.model;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 /**
  * Created by Mao Shaco on 12/3/2015.
@@ -13,6 +14,7 @@ public class ClientEntity {
     private String password;
     private String email;
     private String cardNumber;
+    private Collection<RequestEntity> requestsById;
 
     @Id
     @Column(name = "id")
@@ -25,7 +27,6 @@ public class ClientEntity {
     }
 
     @Basic
-
     @Column(name = "name")
     public String getName() {
         return name;
@@ -89,5 +90,14 @@ public class ClientEntity {
         result = 31 * result + (email != null ? email.hashCode() : 0);
         result = 31 * result + (cardNumber != null ? cardNumber.hashCode() : 0);
         return result;
+    }
+
+    @OneToMany(mappedBy = "clientByClientId")
+    public Collection<RequestEntity> getRequestsById() {
+        return requestsById;
+    }
+
+    public void setRequestsById(Collection<RequestEntity> requestsById) {
+        this.requestsById = requestsById;
     }
 }

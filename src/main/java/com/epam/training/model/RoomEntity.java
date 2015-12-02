@@ -1,6 +1,7 @@
 package com.epam.training.model;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 /**
  * Created by Mao Shaco on 12/3/2015.
@@ -11,6 +12,8 @@ public class RoomEntity {
     private int id;
     private int cost;
     private int number;
+    private Collection<OrderEntity> ordersById;
+    private SuiteEntity suiteBySuiteId;
     private BedEntity bedByBedId;
 
     @Id
@@ -63,6 +66,25 @@ public class RoomEntity {
         result = 31 * result + cost;
         result = 31 * result + number;
         return result;
+    }
+
+    @OneToMany(mappedBy = "roomByRoomId")
+    public Collection<OrderEntity> getOrdersById() {
+        return ordersById;
+    }
+
+    public void setOrdersById(Collection<OrderEntity> ordersById) {
+        this.ordersById = ordersById;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "suite_id", referencedColumnName = "id", nullable = false)
+    public SuiteEntity getSuiteBySuiteId() {
+        return suiteBySuiteId;
+    }
+
+    public void setSuiteBySuiteId(SuiteEntity suiteBySuiteId) {
+        this.suiteBySuiteId = suiteBySuiteId;
     }
 
     @ManyToOne
