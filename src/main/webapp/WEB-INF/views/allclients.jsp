@@ -22,13 +22,13 @@
 		<tr>
 			<td>NAME</td><td>Email</td><td>CardNumber</td><td></td>
 		</tr>
-		<c:forEach items="${clients}" var="client">
+		<c:forEach items="${clientEntities}" var="clientEntity">
 			<tr>
-			<td>${client.name}</td>
-			<td>${client.email}</td>
-			<td>${client.cardNumber}</td>
-			<td><a href="<c:url value='/edit-${client.name}-client' />">edit</a></td>
-			<td><a href="<c:url value='/delete-${client.name}-client' />">delete</a></td>
+			<td>${clientEntity.name}</td>
+			<td>${clientEntity.email}</td>
+			<td>${clientEntity.cardNumber}</td>
+			<td><a href="<c:url value='/edit-${clientEntity.name}-clientEntity' />">edit</a></td>
+			<td><a href="<c:url value='/delete-${clientEntity.name}-clientEntity' />">delete</a></td>
 			</tr>
 		</c:forEach>
 	</table>

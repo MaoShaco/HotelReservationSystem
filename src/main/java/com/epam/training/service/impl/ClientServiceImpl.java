@@ -1,7 +1,7 @@
 package com.epam.training.service.impl;
 
 import com.epam.training.dao.ClientDao;
-import com.epam.training.model.Client;
+import com.epam.training.model.ClientEntity;
 import com.epam.training.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,21 +16,21 @@ public class ClientServiceImpl implements ClientService {
     @Autowired
     private ClientDao dao;
 
-    public Client findById(int id) {
+    public ClientEntity findById(int id) {
         return dao.findById(id);
     }
 
-    public void saveClient(Client client) {
-        dao.saveClient(client);
+    public void saveClient(ClientEntity clientEntity) {
+        dao.saveClient(clientEntity);
     }
 
-    public void updateClient(Client client) {
-        Client entity = dao.findById(client.getId());
+    public void updateClient(ClientEntity clientEntity) {
+        ClientEntity entity = dao.findById(clientEntity.getId());
         if (entity != null) {
-            entity.setName(client.getName());
-            entity.setPassword(client.getPassword());
-            entity.setCardNumber(client.getCardNumber());
-            entity.setEmail(client.getEmail());
+            entity.setName(clientEntity.getName());
+            entity.setPassword(clientEntity.getPassword());
+            entity.setCardNumber(clientEntity.getCardNumber());
+            entity.setEmail(clientEntity.getEmail());
         }
     }
 
@@ -38,16 +38,17 @@ public class ClientServiceImpl implements ClientService {
         dao.deleteClientByName(name);
     }
 
-    public List<Client> findAllClients() {
+    public List<ClientEntity> findAllClients() {
         return dao.findAllClients();
     }
 
-    public Client findClientByName(String name) {
+    public ClientEntity findClientByName(String name) {
         return dao.findClientByName(name);
     }
 
     public boolean isClientNameUnique(Integer id, String name) {
-        Client client = findClientByName(name);
-        return (client == null || ((id != null) && (client.getId() == id)));
+        ClientEntity clientEntity = findClientByName(name);
+        return (clientEntity == null || ((id != null) && (clientEntity.getId() == id)));
+
     }
 }

@@ -1,6 +1,6 @@
 package com.epam.training.dao;
 
-import com.epam.training.model.Client;
+import com.epam.training.model.ClientEntity;
 
 import java.util.List;
 
@@ -9,13 +9,13 @@ import java.util.List;
  */
 public interface ClientDao {
 
-    Client findById(int id);
+    ClientEntity findById(int id);
 
-    void saveClient(Client client);
+    void saveClient(ClientEntity clientEntity);
 
     void deleteClientByName(String name);
 
-    List<Client> findAllClients();
+    List<ClientEntity> findAllClients();
 
-    Client findClientByName(String name);
+    ClientEntity findClientByName(String name);
 }

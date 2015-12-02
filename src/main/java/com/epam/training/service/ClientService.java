@@ -1,22 +1,22 @@
 package com.epam.training.service;
 
-import com.epam.training.model.Client;
+import com.epam.training.model.ClientEntity;
 
 import java.util.List;
 
 public interface ClientService {
 
-    Client findById(int id);
+    ClientEntity findById(int id);
 
-    void saveClient(Client client);
+    void saveClient(ClientEntity clientEntity);
 
-    void updateClient(Client client);
+    void updateClient(ClientEntity clientEntity);
 
     void deleteClientByName(String name);
 
-    List<Client> findAllClients();
+    List<ClientEntity> findAllClients();
 
-    Client findClientByName(String name);
+    ClientEntity findClientByName(String name);
 
     boolean isClientNameUnique(Integer id, String name);
 }

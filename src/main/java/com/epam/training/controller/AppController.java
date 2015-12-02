@@ -1,6 +1,6 @@
 package com.epam.training.controller;
 
-import com.epam.training.model.Client;
+import com.epam.training.model.ClientEntity;
 import com.epam.training.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
@@ -29,68 +29,68 @@ public class AppController {
     @RequestMapping(value = {"/", "/list"}, method = RequestMethod.GET)
     public String listClients(ModelMap model) {
 
-        List<Client> clients = clientService.findAllClients();
-        model.addAttribute("clients", clients);
+        List<ClientEntity> clientEntities = clientService.findAllClients();
+        model.addAttribute("clientEntities", clientEntities);
         return "allclients";
     }
 
     @RequestMapping(value = {"/new"}, method = RequestMethod.GET)
     public String newClient(ModelMap model) {
-        Client client = new Client();
-        model.addAttribute("client", client);
+        ClientEntity clientEntity = new ClientEntity();
+        model.addAttribute("clientEntity", clientEntity);
         model.addAttribute("edit", false);
         return "registration";
     }
 
     @RequestMapping(value = {"/new"}, method = RequestMethod.POST)
-    public String saveClient(@Valid Client client, BindingResult result, ModelMap model) {
+    public String saveClient(@Valid ClientEntity clientEntity, BindingResult result, ModelMap model) {
 
         if (result.hasErrors()) {
             return "registration";
         }
 
-        if (!clientService.isClientNameUnique(client.getId(), client.getName())) {
-            FieldError nameError = new FieldError("client", "name", messageSource
-                    .getMessage("non.unique.name", new String[]{client.getName()}, Locale.getDefault()));
+        if (!clientService.isClientNameUnique(clientEntity.getId(), clientEntity.getName())) {
+            FieldError nameError = new FieldError("clientEntity", "name", messageSource
+                    .getMessage("non.unique.name", new String[]{clientEntity.getName()}, Locale.getDefault()));
             result.addError(nameError);
             return "registration";
         }
 
-        clientService.saveClient(client);
+        clientService.saveClient(clientEntity);
 
-        model.addAttribute("success", "Client " + client.getName() + " registered successfully");
+        model.addAttribute("success", "ClientEntity " + clientEntity.getName() + " registered successfully");
         return "success";
     }
 
-    @RequestMapping(value = {"/edit-{name}-client"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/edit-{name}-clientEntity"}, method = RequestMethod.GET)
     public String editClient(@PathVariable String name, ModelMap model) {
-        Client client = clientService.findClientByName(name);
-        model.addAttribute("client", client);
+        ClientEntity clientEntity = clientService.findClientByName(name);
+        model.addAttribute("clientEntity", clientEntity);
         model.addAttribute("edit", true);
         return "registration";
     }
 
-    @RequestMapping(value = {"/edit-{name}-client"}, method = RequestMethod.POST)
-    public String updateClient(@Valid Client client, BindingResult result, ModelMap model, @PathVariable String name) {
+    @RequestMapping(value = {"/edit-{name}-clientEntity"}, method = RequestMethod.POST)
+    public String updateClient(@Valid ClientEntity clientEntity, BindingResult result, ModelMap model, @PathVariable String name) {
 
         if (result.hasErrors()) {
             return "registration";
         }
 
-        if (!clientService.isClientNameUnique(client.getId(), client.getName())) {
-            FieldError nameError = new FieldError("client", "name", messageSource
-                    .getMessage("non.unique.name", new String[]{client.getName()}, Locale.getDefault()));
+        if (!clientService.isClientNameUnique(clientEntity.getId(), clientEntity.getName())) {
+            FieldError nameError = new FieldError("clientEntity", "name", messageSource
+                    .getMessage("non.unique.name", new String[]{clientEntity.getName()}, Locale.getDefault()));
             result.addError(nameError);
             return "registration";
         }
 
-        clientService.updateClient(client);
+        clientService.updateClient(clientEntity);
 
-        model.addAttribute("success", "Client " + client.getName() + " updated successfully");
+        model.addAttribute("success", "ClientEntity " + clientEntity.getName() + " updated successfully");
         return "success";
     }
 
-    @RequestMapping(value = {"/delete-{name}-client"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/delete-{name}-clientEntity"}, method = RequestMethod.GET)
     public String deleteClient(@PathVariable String name) {
         clientService.deleteClientByName(name);
         return "redirect:/list";
