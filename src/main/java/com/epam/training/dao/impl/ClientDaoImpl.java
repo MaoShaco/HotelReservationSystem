@@ -6,6 +6,7 @@ import com.epam.training.model.ClientEntity;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.criterion.Restrictions;
+import org.joda.time.LocalDate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -37,5 +38,17 @@ public class ClientDaoImpl extends AbstractDao<Integer, ClientEntity> implements
         Criteria criteria = createEntityCriteria();
         criteria.add(Restrictions.eq("name", name));
         return (ClientEntity) criteria.uniqueResult();
+    }
+
+    public List<ClientEntity> findClientsByRoomNumbersOnDate(int roomNumberStarting, int roomNumberEnding, LocalDate interestedDate) {
+        Criteria criteria = getSession().createCriteria(ClientEntity.class, "client")
+                .createCriteria("client.requestsById", "requests")
+                .createCriteria("requests.bookingsById", "booking")
+                .createCriteria("booking.roomByRoomId", "room")
+                .add(Restrictions.between("room.number", roomNumberStarting, roomNumberEnding))
+                .add(Restrictions.ge("requests.checkOut", interestedDate))
+                .add(Restrictions.le("requests.checkIn", interestedDate));
+
+        return (List<ClientEntity>) criteria.list();
     }
 }

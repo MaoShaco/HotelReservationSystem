@@ -3,6 +3,7 @@ package com.epam.training.service.impl;
 import com.epam.training.dao.ClientDao;
 import com.epam.training.model.ClientEntity;
 import com.epam.training.service.ClientService;
+import org.joda.time.LocalDate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -50,5 +51,13 @@ public class ClientServiceImpl implements ClientService {
         ClientEntity clientEntity = findClientByName(name);
         return (clientEntity == null || ((id != null) && (clientEntity.getId() == id)));
 
+    }
+
+    public List<ClientEntity> findClientsByRoomNumberOnDate(int roomNumber, LocalDate interestedDate) {
+        return findClientsByRoomNumbersOnDate(roomNumber, roomNumber, interestedDate);
+    }
+
+    public List<ClientEntity> findClientsByRoomNumbersOnDate(int roomNumberStarting, int roomNumberEnding, LocalDate interestedDate) {
+        return dao.findClientsByRoomNumbersOnDate(roomNumberStarting, roomNumberEnding, interestedDate);
     }
 }

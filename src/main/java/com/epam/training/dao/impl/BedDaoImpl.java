@@ -1,0 +1,29 @@
+package com.epam.training.dao.impl;
+
+import com.epam.training.dao.AbstractDao;
+import com.epam.training.dao.BedDao;
+import com.epam.training.model.BedEntity;
+import org.hibernate.Criteria;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+/**
+ * Created by Mao Shaco on 12/3/2015.
+ */
+@Repository("bedDao")
+public class BedDaoImpl extends AbstractDao<Integer, BedEntity> implements BedDao {
+    public BedEntity findById(int id) {
+        return getByKey(id);
+    }
+
+    public void saveBed(BedEntity bedEntity) {
+        persist(bedEntity);
+    }
+
+    @SuppressWarnings("unchecked")
+    public List<BedEntity> findAllBeds() {
+        Criteria criteria = getSession().createCriteria(BedEntity.class);
+        return (List<BedEntity>) criteria.list();
+    }
+}

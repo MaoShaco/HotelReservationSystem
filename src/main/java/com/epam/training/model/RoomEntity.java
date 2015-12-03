@@ -12,7 +12,7 @@ public class RoomEntity {
     private int id;
     private int cost;
     private int number;
-    private Collection<OrderEntity> ordersById;
+    private Collection<BookingEntity> bookingsById;
     private SuiteEntity suiteBySuiteId;
     private BedEntity bedByBedId;
 
@@ -69,12 +69,12 @@ public class RoomEntity {
     }
 
     @OneToMany(mappedBy = "roomByRoomId")
-    public Collection<OrderEntity> getOrdersById() {
-        return ordersById;
+    public Collection<BookingEntity> getBookingsById() {
+        return bookingsById;
     }
 
-    public void setOrdersById(Collection<OrderEntity> ordersById) {
-        this.ordersById = ordersById;
+    public void setBookingsById(Collection<BookingEntity> bookingsById) {
+        this.bookingsById = bookingsById;
     }
 
     @ManyToOne

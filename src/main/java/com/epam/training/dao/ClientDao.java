@@ -1,6 +1,7 @@
 package com.epam.training.dao;
 
 import com.epam.training.model.ClientEntity;
+import org.joda.time.LocalDate;
 
 import java.util.List;
 
@@ -18,4 +19,7 @@ public interface ClientDao {
     List<ClientEntity> findAllClients();
 
     ClientEntity findClientByName(String name);
+
+    List<ClientEntity> findClientsByRoomNumbersOnDate(int roomNumberStarting, int roomNumberEnding, LocalDate interestedDate);
+
 }

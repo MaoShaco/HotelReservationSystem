@@ -4,7 +4,7 @@
     <persistence-unit name="persistenceUnit">
         <class>com.epam.training.model.BedEntity</class>
         <class>com.epam.training.model.ClientEntity</class>
-        <class>com.epam.training.model.OrderEntity</class>
+        <class>com.epam.training.model.BookingEntity</class>
         <class>com.epam.training.model.RequestEntity</class>
         <class>com.epam.training.model.RoomEntity</class>
         <class>com.epam.training.model.SuiteEntity</class>

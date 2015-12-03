@@ -1,6 +1,7 @@
 package com.epam.training.service;
 
 import com.epam.training.model.ClientEntity;
+import org.joda.time.LocalDate;
 
 import java.util.List;
 
@@ -19,4 +20,9 @@ public interface ClientService {
     ClientEntity findClientByName(String name);
 
     boolean isClientNameUnique(Integer id, String name);
+
+    List<ClientEntity> findClientsByRoomNumberOnDate(int roomNumber, LocalDate interestedDate);
+
+    List<ClientEntity> findClientsByRoomNumbersOnDate(int roomNumberStarting, int roomNumberEnding, LocalDate interestedDate);
+
 }

@@ -14,7 +14,7 @@ public class RequestEntity {
     private int id;
     private LocalDate checkIn;
     private LocalDate checkOut;
-    private OrderEntity ordersById;
+    private BookingEntity bookingsById;
     private SuiteEntity suiteBySuiteId;
     private ClientEntity clientByClientId;
     private BedEntity bedByBedId;
@@ -74,12 +74,12 @@ public class RequestEntity {
     }
 
     @OneToOne(mappedBy = "requestByRequestId")
-    public OrderEntity getOrdersById() {
-        return ordersById;
+    public BookingEntity getBookingsById() {
+        return bookingsById;
     }
 
-    public void setOrdersById(OrderEntity ordersById) {
-        this.ordersById = ordersById;
+    public void setBookingsById(BookingEntity bookingsById) {
+        this.bookingsById = bookingsById;
     }
 
     @ManyToOne

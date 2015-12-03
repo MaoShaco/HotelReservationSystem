@@ -2,6 +2,7 @@ package com.epam.training.controller;
 
 import com.epam.training.model.ClientEntity;
 import com.epam.training.service.ClientService;
+import org.joda.time.LocalDate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
@@ -30,7 +31,7 @@ public class AppController {
     public String listClients(ModelMap model) {
 
         List<ClientEntity> clientEntities = clientService.findAllClients();
-        model.addAttribute("clientEntities", clientEntities);
+        List<ClientEntity> c = clientService.findClientsByRoomNumbersOnDate(1, 100, new LocalDate());
         return "allclients";
     }
 
