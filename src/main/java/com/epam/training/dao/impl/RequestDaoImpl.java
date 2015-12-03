@@ -3,8 +3,12 @@ package com.epam.training.dao.impl;
 import com.epam.training.dao.AbstractDao;
 import com.epam.training.dao.RequestDao;
 import com.epam.training.model.RequestEntity;
+import org.hibernate.Criteria;
 import org.hibernate.Query;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * Created by Mao Shaco on 12/3/2015.
@@ -24,5 +28,12 @@ public class RequestDaoImpl extends AbstractDao<Integer, RequestEntity> implemen
         Query query = getSession().createSQLQuery("delete from request where request_id = :request_id");
         query.setString("request_id", String.valueOf(requestEntity.getId()));
         query.executeUpdate();
+    }
+
+    public List<RequestEntity> findRequestsByClientName(String clientName) {
+        Criteria criteria = getSession().createCriteria(RequestEntity.class, "request")
+                .createCriteria("request.clientByClientId", "client")
+                .add(Restrictions.eq("client", clientName));
+        return (List<RequestEntity>) criteria.list();
     }
 }
