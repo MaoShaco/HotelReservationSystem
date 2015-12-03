@@ -4,6 +4,7 @@ import com.epam.training.dao.AbstractDao;
 import com.epam.training.dao.BedDao;
 import com.epam.training.model.BedEntity;
 import org.hibernate.Criteria;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -25,5 +26,11 @@ public class BedDaoImpl extends AbstractDao<Integer, BedEntity> implements BedDa
     public List<BedEntity> findAllBeds() {
         Criteria criteria = getSession().createCriteria(BedEntity.class);
         return (List<BedEntity>) criteria.list();
+    }
+
+    public BedEntity findBedByName(String bedName) {
+        Criteria criteria = createEntityCriteria();
+        criteria.add(Restrictions.eq("bed", bedName));
+        return (BedEntity) criteria.uniqueResult();
     }
 }

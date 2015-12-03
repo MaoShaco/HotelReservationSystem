@@ -4,6 +4,7 @@ import com.epam.training.dao.AbstractDao;
 import com.epam.training.dao.SuiteDao;
 import com.epam.training.model.SuiteEntity;
 import org.hibernate.Criteria;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -25,5 +26,11 @@ public class SuiteDaoImpl extends AbstractDao<Integer, SuiteEntity> implements S
     public List<SuiteEntity> findAllSuities() {
         Criteria criteria = getSession().createCriteria(SuiteEntity.class);
         return (List<SuiteEntity>) criteria.list();
+    }
+
+    public SuiteEntity findSuiteByName(String suiteName) {
+        Criteria criteria = createEntityCriteria();
+        criteria.add(Restrictions.eq("suite", suiteName));
+        return (SuiteEntity) criteria.uniqueResult();
     }
 }
