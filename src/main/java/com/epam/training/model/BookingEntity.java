@@ -9,8 +9,8 @@ import javax.persistence.*;
  * Created by Mao Shaco on 12/3/2015.
  */
 @Entity
-@Table(name = "order", schema = "", catalog = "example")
-public class OrderEntity {
+@Table(name = "booking", schema = "", catalog = "example")
+public class BookingEntity {
     private int id;
     private LocalDateTime timestamp;
     private int expense;
@@ -54,7 +54,7 @@ public class OrderEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        OrderEntity that = (OrderEntity) o;
+        BookingEntity that = (BookingEntity) o;
 
         if (id != that.id) return false;
         if (expense != that.expense) return false;
