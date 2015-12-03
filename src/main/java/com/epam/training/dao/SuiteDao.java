@@ -13,4 +13,6 @@ public interface SuiteDao {
     void saveSuite(SuiteEntity suiteEntity);
 
     List<SuiteEntity> findAllSuities();
+
+    SuiteEntity findSuiteByName(String suiteName);
 }

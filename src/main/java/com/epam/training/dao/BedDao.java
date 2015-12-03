@@ -13,4 +13,6 @@ public interface BedDao {
     void saveBed(BedEntity bedEntity);
 
     List<BedEntity> findAllBeds();
+
+    BedEntity findBedByName(String bedName);
 }
