@@ -4,20 +4,25 @@ package com.epam.training.webapp.controller;
 import com.epam.training.dataaccess.model.ClientEntity;
 import com.epam.training.dataaccess.model.RequestEntity;
 import com.epam.training.services.ClientService;
+import com.epam.training.webapp.vo.Person;
 import org.joda.time.LocalDate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/")
@@ -28,6 +33,19 @@ public class AppController {
 
     @Autowired
     MessageSource messageSource;
+
+    @RequestMapping(value="/index", method = RequestMethod.GET)
+    public String index() {
+        return "tiles";
+    }
+
+    @RequestMapping(value="viewPeson", method = RequestMethod.GET)
+    public ModelAndView viewPersons(Model model) {
+        Map<String, List<Person>> persons =
+                new HashMap<String, List<Person>>();
+        persons.put("persons", Person.createPersons());
+        return new ModelAndView("personList", persons);
+    }
 
     @RequestMapping(value = {"/", "/list"}, method = RequestMethod.GET)
     public String listClients(ModelMap model) {

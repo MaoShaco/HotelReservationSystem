@@ -1,4 +1,4 @@
-package com.epam.training.webapp.app;
+/*package com.epam.training.webapp.app;
 
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
@@ -23,4 +23,4 @@ public class AppInitializer implements WebApplicationInitializer {
 		servlet.addMapping("/","/resources/");
 	}
 
-}
+}*/

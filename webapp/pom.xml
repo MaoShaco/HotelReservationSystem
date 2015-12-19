@@ -16,6 +16,13 @@
 			<groupId>com.epam.training</groupId>
 			<artifactId>services</artifactId>
 		</dependency>
+
+		<!--Tiles-->
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-extras</artifactId>
+		</dependency>
+
 		<!-- Servlet+JSP+JSTL -->
 		<dependency>
 			<groupId>javax.servlet</groupId>

@@ -26,6 +26,7 @@
         <servlet-api.version>3.1.0</servlet-api.version>
         <servlet.jsp-api.version>2.3.1</servlet.jsp-api.version>
         <servlet.jstl.version>1.2</servlet.jstl.version>
+        <tiles.version>3.0.5</tiles.version>
     </properties>
 
     <modules>
@@ -35,6 +36,7 @@
     </modules>
 
     <dependencyManagement>
+
         <dependencies>
             <!-- Project modules -->
             <dependency>
@@ -53,6 +55,12 @@
                 <version>1.0.0</version>
             </dependency>
 
+            <!--Tiles-->
+            <dependency>
+                <groupId>org.apache.tiles</groupId>
+                <artifactId>tiles-extras</artifactId>
+                <version>${tiles.version}</version>
+            </dependency>
 
             <!-- Spring -->
             <dependency>
