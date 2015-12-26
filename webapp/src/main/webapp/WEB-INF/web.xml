@@ -20,7 +20,4 @@
 		<servlet-name>tiles</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	<welcome-file-list>
-		<welcome-file>springtiles.jsp</welcome-file>
-	</welcome-file-list>
 </web-app>

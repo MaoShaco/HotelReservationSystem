@@ -9,7 +9,7 @@ import javax.persistence.*;
  * Created by Mao Shaco on 12/3/2015.
  */
 @Entity
-@Table(name = "booking", schema = "", catalog = "example")
+@Table(name = "booking", schema = "", catalog = "hrs")
 public class BookingEntity {
     private int id;
     private LocalDateTime timestamp;

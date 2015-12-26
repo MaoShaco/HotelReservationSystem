@@ -9,9 +9,9 @@
         <class>com.epam.training.dataaccess.model.RoomEntity</class>
         <class>com.epam.training.dataaccess.model.SuiteEntity</class>
         <properties>
-            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/example"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/hrs"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
-            <property name="hibernate.connection.username" value="myuser"/>
+            <property name="hibernate.connection.username" value="myusername"/>
             <property name="hibernate.connection.password" value="mypassword"/>
             <property name="hibernate.enable_lazy_load_no_trans" value="true" />
         </properties>

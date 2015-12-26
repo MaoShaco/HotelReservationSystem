@@ -38,7 +38,6 @@ top: 18%;;
 	right: 86%;
 top: 19%;
 }
-}
 /* Clickable class fix problem with hover on touch devices */
 /* Use it for non-touch hover action */
 
@@ -84,16 +83,6 @@ top: 19%;
 	-moz-border-radius: 30px;
 	border-radius: 30px;
 }
-
-/* preloading images */
-.owl-item.loading{
-	min-height: 150px;
-	background: url(AjaxLoader.gif) no-repeat center center
-}
-/* 
- * 	Core Owl Carousel CSS File
- *	v1.24
- */
 
 /* clearfix */
 .owl-carousel .owl-wrapper:after {
@@ -147,10 +136,6 @@ top: 19%;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-/* mouse grab icon */
-.grabbing { 
-    cursor:url(grabbing.png) 8 8, move;
-}
 
 /* fix */
 .owl-carousel  .owl-wrapper,
@@ -371,72 +356,87 @@ top: 31%;
 right: 0%;
 top: 31%
 }
-@media (max-width:640px){
-.owl-carousel {
-margin: 2em auto;
-}
-.owl-next {
-right: -2%;
-top: 31%;
-}
-@media (max-width:480px){
-.owl-carousel {
-margin: 1em auto;
-}
-.owl-theme .owl-controls {
-margin-top: 0px;
-}
-	#owl-demo .item img {
-		width: 100%;
-		border:none;
-	}
-	.owl-next {
-right: -11%;
-top: 31%;
-}
-.owl-prev {
-right: 99%;
-top: 31%;
-}
-}
-@media (max-width:320px){
+@media (max-width:640px) {
 	.owl-carousel {
-		width: 50%;
+		margin: 2em auto;
 	}
-	.owl-prev {
-		left: -12.5%;
-		top: 15%;
-	}
+
 	.owl-next {
-		right: -45%;
-		top: 15%;
+		right: -2%;
+		top: 31%;
 	}
-	.item h5,.item label {
-		padding-right: 0em;
+
+	@media (max-width: 480px) {
+		.owl-carousel {
+			margin: 1em auto;
+		}
+
+		.owl-theme .owl-controls {
+			margin-top: 0px;
+		}
+
+		#owl-demo .item img {
+			width: 100%;
+			border: none;
+		}
+
+		.owl-next {
+			right: -11%;
+			top: 31%;
+		}
+
+		.owl-prev {
+			right: 99%;
+			top: 31%;
+		}
 	}
-	.owl-prev {
-background: url(../images/splits.png) no-repeat 12px -30px;
-}
-.owl-next {
-background: url(../images/splits.png) no-repeat -29px -29px;
-}
-}
-.owl-theme,.owl-controls,.owl-page span {
-margin-top: 1em;
-}
-.item h5{
-	font-size:1.5em;
-	color:#6F6F6F;
-	font-weight:300;
-	margin:0.8em 0 0.3em;
-	padding-right:2em;
-}
-.item h5 span{
-	font-weight:600;
-}
-.item label{
-	color:#6F6F6F;
-	font-weight:300;
-	font-size:1.2em;
-	padding-right:2em;
-}
+	@media (max-width: 320px) {
+		.owl-carousel {
+			width: 50%;
+		}
+
+		.owl-prev {
+			left: -12.5%;
+			top: 15%;
+		}
+
+		.owl-next {
+			right: -45%;
+			top: 15%;
+		}
+
+		.item h5, .item label {
+			padding-right: 0em;
+		}
+
+		.owl-prev {
+			background: url(../images/splits.png) no-repeat 12px -30px;
+		}
+
+		.owl-next {
+			background: url(../images/splits.png) no-repeat -29px -29px;
+		}
+	}
+	.owl-theme, .owl-controls, .owl-page span {
+		margin-top: 1em;
+	}
+
+	.item h5 {
+		font-size: 1.5em;
+		color: #6F6F6F;
+		font-weight: 300;
+		margin: 0.8em 0 0.3em;
+		padding-right: 2em;
+	}
+
+	.item h5 span {
+		font-weight: 600;
+	}
+
+	.item label {
+		color: #6F6F6F;
+		font-weight: 300;
+		font-size: 1.2em;
+		padding-right: 2em;
+	}
+}}

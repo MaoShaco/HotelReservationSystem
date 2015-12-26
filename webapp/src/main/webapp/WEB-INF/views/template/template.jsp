@@ -1,34 +1,48 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+         pageEncoding="ISO-8859-1" %>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+
+<html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Spring MVC - Tiles Integration tutorial</title>
-	<link rel="stylesheet" href="resources/css/screen.css" type="text/css" media="screen, projection">
-	<link rel="stylesheet" href="resources/css/print.css" type="text/css" media="print">
-	<!--[if IE]>
-	<link rel="stylesheet" href="resources/css/ie.css" type="text/css" media="screen, projection">
-	<![endif]-->
-<style>
-body{ margin-top:20px; margin-bottom:20px; background-color:#DFDFDF;}
-</style>
+    <title>Hotel Fortune a Hotel Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+    <link href='<c:url value="//fonts.googleapis.com/css?family=Open+Sans:600italic,700italic,800italic,400,300,600,700,800"/>'
+          rel='stylesheet' type='text/css'>
+    <link href='<c:url value="//fonts.googleapis.com/css?family=Pinyon+Script"/>' rel='stylesheet' type='text/css'>
+    <link href='<c:url value="//fonts.googleapis.com/css?family=Quicksand:400,700"/>' rel='stylesheet' type='text/css'>
+    <link href="<c:url value='/resources/css/bootstrap.css' />" rel="stylesheet">
+    <link href="<c:url value='/resources/css/style.css'/>" rel="stylesheet" type="text/css" media="all"/>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+    <script src="<c:url value='/resources/js/jquery.min.js' />"></script>
 </head>
 <body>
-	<div class="container" style="border: #C1C1C1 solid 1px; border-radius:10px;">
-		<!-- Header -->
-		<tiles:insertAttribute name="header" />
-		<!-- Menu Page -->
-		<div class="span-5  border" style="height:400px;background-color:#FCFCFC;">
-			<tiles:insertAttribute name="menu" />
-		</div>
-		<!-- Body Page -->
-		<div class="span-19 last">
-			<tiles:insertAttribute name="body" />
-		</div>
-		<!-- Footer Page -->
-		<tiles:insertAttribute name="footer" />
-	</div>
+<!--Header Page -->
+<div>
+    <div>
+        <!-- Header -->
+        <tiles:insertAttribute name="header"/>
+    </div>
+
+    <div >
+        <tiles:insertAttribute name="fastlink"/>
+    </div>
+
+    <div>
+        <tiles:insertAttribute name="body"/>
+    </div>
+
+    <div>
+        <!-- Footer Page -->
+        <tiles:insertAttribute name="footer"/>
+    </div>
+
+</div>
+
 </body>
 </html>

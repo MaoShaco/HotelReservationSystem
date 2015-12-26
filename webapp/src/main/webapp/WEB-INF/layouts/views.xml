@@ -4,16 +4,28 @@
         "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
 
-    <definition name="tiles" extends="DefaultTemplate">
-        <put-attribute name="body"	value="/WEB-INF/views/springtiles.jsp" />
+    <definition name="index" extends="DefaultTemplate">
+        <put-attribute name="body"	value="/WEB-INF/views/index.jsp" />
+    </definition>
+
+    <definition name="facilities" extends="DefaultTemplate">
+        <put-attribute name="body"	value="/WEB-INF/views/facilities.jsp" />
+    </definition>
+
+    <definition name="details" extends="DefaultTemplate">
+        <put-attribute name="body"	value="/WEB-INF/views/details.jsp" />
+    </definition>
+
+    <definition name="booking" extends="DefaultTemplate">
+        <put-attribute name="body"	value="/WEB-INF/views/booking.jsp" />
+    </definition>
+
+    <definition name="contact" extends="DefaultTemplate">
+        <put-attribute name="body"	value="/WEB-INF/views/contact.jsp" />
     </definition>
 
     <definition name="personList" extends="DefaultTemplate">
         <put-attribute name="body"	value="/WEB-INF/views/personList.jsp" />
-    </definition>
-
-    <definition name="index" extends="DefaultTemplate">
-        <put-attribute name="body"	value="/WEB-INF/views/index.jsp" />
     </definition>
 
     <definition name="registration" extends="DefaultTemplate">

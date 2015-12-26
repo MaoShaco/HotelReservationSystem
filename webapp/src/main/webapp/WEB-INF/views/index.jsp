@@ -1,137 +1,27 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<html>
-<head>
-    <title>Hotel Fortune a Hotel Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Pinyon+Script' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Quicksand:400,700' rel='stylesheet' type='text/css'>
-    <link href="<c:url value='/resources/css/bootstrap.css' />" rel="stylesheet">
-    <link href="<c:url value='/resources/css/style.css'/>" rel="stylesheet" type="text/css" media="all"/>
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <script src="<c:url value='/resources/js/jquery.min.js' />"></script>
-</head>
-<body>
-<!--header starts-->
-<div class="header">
-    <div class="top-header">
-        <div class="container">
-            <div class="logo">
-                <a href="index.html"><img src="<c:url value='/resources/images/logo.png' />"/></a>
-            </div>
-            <span class="menu"> </span>
-            <div class="m-clear"></div>
-            <div class="top-menu">
-                <ul>
-                    <li class="active"><a href="index.html">START</a></li>
-                    <li><a class="scroll" href="facilities.html">FACILITIES</a></li>
-                    <li><a class="scroll" href="restaurant.html">RESTAURANT</a></li>
-                    <li><a class="scroll" href="conference.html">CONFERENCE</a></li>
-                    <li><a class="scroll" href="booking.html">BOOKING</a></li>
-                    <li><a class="scroll" href="contact.html">CONTACT US</a></li>
-                </ul>
-                <script>
-                    $("span.menu").click(function(){
-                        $(".top-menu ul").slideToggle(200);
-                    });
-                </script>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
-    <div class="banner">
-        <div class="banner-info text-center">
-            <h3><label>Hello,</label> You've Reached</h3>
-            <h1>HOTEL FORTUNE</h1>
-            <span></span>
-            <ul>
-                <li><a class="scroll" href="#">HOTEL</a><i class="line"></i></li>
-                <li><a class="scroll" href="#">SPA SALOON</a><i class="line2"></i></li>
-                <li><a class="scroll" href="#">FINE DINING</a></li>
-                <div class="clearfix"></div>
-            </ul>
-        </div>
-    </div>
-</div>
-<div class="online_reservation">
-    <div class="b_room">
-        <div class="booking_room">
-            <div class="reservation">
-                <!---strat-date-piker---->
-                <link rel="stylesheet" href="<c:url value='/resources/css/jquery-ui.css' />" />
-                <script src="<c:url value='/resources/js/jquery-ui.js' />"></script>
-                <script>
-                    $(function() {
-                        $( "#datepicker,#datepicker1" ).datepicker();
-                    });
-                </script>
-                <!---/End-date-piker---->
 
-                <ul>
-                    <li  class="span1_of_1 left">
-                        <h5>Arrival</h5>
-                        <div class="book_date">
-                            <form>
-                                <span><img src="<c:url value='/resources/images/icon.png' />" alt="" /></span>
-                                <input type="date" value="Select date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Select date';}">
-                            </form>
-                        </div>
-                    </li>
-                    <li  class="span1_of_1 left">
-                        <h5>Departure</h5>
-                        <div class="book_date">
-                            <form>
-                                <span><img src="<c:url value='/resources/images/icon.png' />" alt="" /></span>
-                                <input type="date" value="Select date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Select date';}">
-                            </form>
-                        </div>
-                    </li>
-                    <li class="span1_of_1">
-                        <h5>Room type</h5>
-                        <!----------start section_room----------->
-                        <div class="section_room">
-                            <select id="country" onchange="change_country(this.value)" class="frm-field required">
-                                <option value="null">Standard Single Room</option>
-                                <option value="null">Suite room</option>
-                                <option value="AX">Single room</option>
-                                <option value="AX">Double room</option>
-                            </select>
-                        </div>
-                    </li>
-                    <li class="span1_of_3">
-                        <div class="date_btn">
-                            <form>
-                                <input type="submit" value="View Prices" />
-                            </form>
-                        </div>
-                    </li>
-                    <div class="clearfix"></div>
-                </ul>
-            </div>
-        </div>
-        <div class="clearfix"></div>
-    </div>
-</div>
-</div>
 <!---->
 <div class="package text-center">
     <div class="container">
-        <h3>Book A Package</h3>
-        <p>Sed euismod sem id consequat rutrum. Ut convallis lorem a orci mollis, eu vulputate libero aliquet. Praesent egestas nisi sed purus tincidunt faucibus. Aliquam lobortis orci lacus, sed faucibus augue dapibus vitae. Ut vitae mi sapien. Phasellus a eros justo.
+        <h3>Book a Package</h3>
+        <p>Sed euismod sem id consequat rutrum. Ut convallis lorem a orci mollis, eu vulputate libero aliquet.
+            Praesent
+            egestas nisi sed purus tincidunt faucibus. Aliquam lobortis orci lacus, sed faucibus augue dapibus
+            vitae. Ut
+            vitae mi sapien. Phasellus a eros justo.
             Curabitur odio massa, tincidunt nec nibh sit amet</p>
         <!-- requried-jsfiles-for owl -->
         <link href="<c:url value='/resources/css/owl.carousel.css' />" rel="stylesheet">
         <script src="<c:url value='/resources/js/owl.carousel.js' />"></script>
         <script>
-            $(document).ready(function() {
-                $("#owl-demo").owlCarousel({
-                    items : 1,
-                    lazyLoad : true,
-                    autoPlay : true,
-                    navigation : true,
-                    navigationText :  false,
-                    pagination : false,
+            $(document).ready(function () {
+                $('#owl-demo').owlCarousel({
+                    items: 1,
+                    lazyLoad: true,
+                    autoPlay: true,
+                    navigation: true,
+                    navigationText: false,
+                    pagination: false
                 });
             });
         </script>
@@ -146,14 +36,14 @@
             </div>
             <div class="item text-center image-grid">
                 <ul>
-                    <li> <img src="<c:url value='/resources/images/3.jpg' />" alt=""></li>
+                    <li><img src="<c:url value='/resources/images/3.jpg' />" alt=""></li>
                     <li><img src="<c:url value='/resources/images/4.jpg' />" alt=""></li>
                     <li><img src="<c:url value='/resources/images/5.jpg' />" alt=""></li>
                 </ul>
             </div>
             <div class="item text-center image-grid">
                 <ul>
-                    <li> <img src="<c:url value='/resources/images/6.jpg' />" alt=""></li>
+                    <li><img src="<c:url value='/resources/images/6.jpg' />" alt=""></li>
                     <li><img src="<c:url value='/resources/images/2.jpg' />" alt=""></li>
                     <li><img src="<c:url value='/resources/images/8.jpg' />" alt=""></li>
                 </ul>
@@ -170,7 +60,8 @@
             <div class="col-md-4 room-sec">
                 <img src="<c:url value='/resources/images/pic1.jpg' />" alt=""/>
                 <h4>Standard Double Room</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent scelerisque lectus vitae dui sollicitudin commodo.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent scelerisque lectus vitae dui
+                    sollicitudin commodo.</p>
                 <div class="items">
                     <li><a href="#"><span class="img1"> </span></a></li>
                     <li><a href="#"><span class="img2"> </span></a></li>
@@ -183,7 +74,8 @@
             <div class="col-md-4 room-sec">
                 <img src="<c:url value='/resources/images/pic2.jpg' />" alt=""/>
                 <h4>Superior Double Room</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent scelerisque lectus vitae dui sollicitudin commodo.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent scelerisque lectus vitae dui
+                    sollicitudin commodo.</p>
                 <div class="items">
                     <li><a href="#"><span class="img1"> </span></a></li>
                     <li><a href="#"><span class="img2"> </span></a></li>
@@ -196,7 +88,8 @@
             <div class="col-md-4 room-sec">
                 <img src="<c:url value='/resources/images/pic3.jpg' />" alt=""/>
                 <h4>Family Room</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent scelerisque lectus vitae dui sollicitudin commodo.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent scelerisque lectus vitae dui
+                    sollicitudin commodo.</p>
                 <div class="items">
                     <li><a href="#"><span class="img1"> </span></a></li>
                     <li><a href="#"><span class="img2"> </span></a></li>
@@ -210,7 +103,8 @@
             <div class="col-md-4 room-sec">
                 <img src="<c:url value='/resources/images/pic4.jpg' />" alt=""/>
                 <h4>Standard Single Room</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent scelerisque lectus vitae dui sollicitudin commodo.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent scelerisque lectus vitae dui
+                    sollicitudin commodo.</p>
                 <div class="items">
                     <li><a href="#"><span class="img1"> </span></a></li>
                     <li><a href="#"><span class="img2"> </span></a></li>
@@ -223,7 +117,8 @@
             <div class="col-md-4 room-sec">
                 <img src="<c:url value='/resources/images/pic5.jpg' />" alt=""/>
                 <h4>Superior Single Room</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent scelerisque lectus vitae dui sollicitudin commodo.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent scelerisque lectus vitae dui
+                    sollicitudin commodo.</p>
                 <div class="items">
                     <li><a href="#"><span class="img1"> </span></a></li>
                     <li><a href="#"><span class="img2"> </span></a></li>
@@ -236,7 +131,8 @@
             <div class="col-md-4 room-sec">
                 <img src="<c:url value='/resources/images/pic6.jpg' />" alt=""/>
                 <h4>VIP Room</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent scelerisque lectus vitae dui sollicitudin commodo.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent scelerisque lectus vitae dui
+                    sollicitudin commodo.</p>
                 <div class="items">
                     <li><a href="#"><span class="img1"> </span></a></li>
                     <li><a href="#"><span class="img2"> </span></a></li>
@@ -250,62 +146,3 @@
         </div>
     </div>
 </div>
-<!---->
-<div class="fotter">
-    <div class="container">
-        <h3>143 City Located Hotels WorldWide</h3>
-        <h4>"Hospitality, Quality & Good Locations. We only provide you with the best hotels" - John Deo</h4>
-        <i class="man"></i>
-    </div>
-</div>
-<!---->
-<div class="fotter-info">
-    <div class="container">
-        <div class="col-md-5 details">
-            <div class="hotel-info">
-                <h4>ABOUT THIS HOTEL</h4>
-                <p>Suspendisse erat mi, tincidunt sit amet massa quis, commodo fermentum diam. Sed nec dui nec nunc tempor interdum.</p>
-                <p>Ut vulputate augue urna, ut porta dolor imperdiet a. Vestibulum nec leo eu magna aliquam ornare.</p>
-            </div>
-            <div class="news">
-                <h4>LATEST NEWS</h4>
-                <h5>Grand Hotel Joins Deluxe Hotels</h5>
-                <a href="#">15 AUG</a>
-                <h5>Happy Christmas To Everyone</h5>
-                <a href="#">15 AUG</a>
-                <h5>Best Places To Visit 2014</h5>
-                <a href="#">15 AUG</a>
-                <h5>Various Offers</h5>
-                <a href="#">15 AUG</a>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-        <div class="col-md-7 details">
-            <div class="join">
-                <h4>JOIN DELUXE HOTELS</h4>
-                <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus vestibulum blandit egestas.
-                    Nam id lectus vel orci luctus consectetur eget id elit. In tortor odio, pellentesque eu arcu sit amet, lacinia euismod nisi. Aliquam sodales tristique mauris ac fermentum.
-                    Donec vel varius ipsum. Pellentesque vitae mollis massa. </p>
-                <p>There is no costs or whatsoever so sign up today!</p>
-                <a href="#">READ MORE</a>
-            </div>
-            <div class="member">
-                <h4>MEMBERS AREA</h4>
-                <form>
-                    <p>Username</p>
-                    <input type="text" placeholder="" required/>
-                    <p>Password</p>
-                    <input type="password" placeholder="" required/>
-                    <input type="submit" value="LOGIN"/>
-                </form>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-        <div class="clearfix"></div>
-    </div>
-    <h6>&copy 2014 Hotel Fortune . All Rights Reserved | Template by <a href="http://w3layouts.com/">W3layouts</a></h6>
-</div>
-<!---->
-
-</body>
-</html>
