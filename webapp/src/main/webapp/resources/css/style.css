@@ -29,8 +29,10 @@ text-decoration: none;
 .top-header{
 background:#2A2E33;
 }
+
 .aBody{
-	padding: 5% 0 0 0;
+	padding: 4% 0 0 0;
+	background: url(../images/rooms.jpg) no-repeat 0px 0px;
 }
 .logo{
 float:left;
@@ -53,6 +55,69 @@ top: 4.5%;
 left: 26.5%;
 font-weight: 200;
 }
+body, #mainWrapper {
+	height: 70%;
+	background-color:rgb(245, 245, 245);
+}
+
+body, .form-control{
+	font-size:12px!important;
+}
+
+.floatRight{
+	float:right;
+	margin-right: 18px;
+}
+
+.has-error{
+	color:red;
+}
+
+.formcontainer{
+	background-color: #DAE8E8;
+	padding: 20px;
+}
+
+.tablecontainer{
+	padding-left: 20px;
+}
+
+.generic-container {
+	width:80%;
+	margin-left: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 20px;
+	background-color: #EAE7E7;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	box-shadow: 0 0 30px black;
+}
+
+.custom-width {
+	width: 80px !important;
+}
+.username.ng-valid {
+	background-color: lightgreen;
+}
+.username.ng-dirty.ng-invalid-required {
+	background-color: red;
+}
+.username.ng-dirty.ng-invalid-minlength {
+	background-color: yellow;
+}
+
+.email.ng-valid {
+	background-color: lightgreen;
+}
+.email.ng-dirty.ng-invalid-required {
+	background-color: red;
+}
+.email.ng-dirty.ng-invalid-email {
+	background-color: yellow;
+}
+
+
 .top-menu{
 float:right;
 }
@@ -101,7 +166,6 @@ padding:16px 0 23px 0;
 font-size:3em;
 }
 .banner-info span{
-display:block;
 border-top:1px dashed rgba(255, 255, 255, 0.59);
 width:20%;
 margin:0 auto;
@@ -140,13 +204,13 @@ bottom: 48%;
 	z-index: 999;
 }
 .b_room{
-	display: inline-flex;
 	box-shadow: 0px 0px 4px rgb(97, 97, 97);
-	-webkit-box-shadow: 0px 0px 4px rgb(97, 97, 97);
+	-webkit-box-shadow: 4px 4px 4px rgb(97, 97, 97);
 	-moz-box-shadow: 0px 0px 4px rgb(97, 97, 97);
 	-o-box-shadow: 0px 0px 4px rgb(97, 97, 97);
 	width: 70%;
 	position:absolute;
+	top: 40%;
 }
 .booking_room {
 width: 100%;
@@ -333,7 +397,7 @@ select option{
 }
 /* start footer */
 .footer{
-	padding: 4% 2% 2%;
+	padding: 0% 2% 2%;
 }
 .copy{
 	float: left;
@@ -700,12 +764,14 @@ font-style:italic;
 margin:1.2em 0 0 2.7em;
 }
 .man{
+	width: 100%;
+	height: 150px;
 background:url(../images/man.png) no-repeat 0px 0px;
-width:278px;
-height:277px;
+	background-repeat: no-repeat;
+	background-size: contain;
 display:block;
 position:absolute;
-top:-84%;
+top:0;
 left:71%;
 }
 .footer-info {
