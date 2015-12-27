@@ -13,6 +13,7 @@
     <link href='<c:url value="//fonts.googleapis.com/css?family=Quicksand:400,700"/>' rel='stylesheet' type='text/css'>
     <link href="<c:url value='/resources/css/bootstrap.css' />" rel="stylesheet">
     <link href="<c:url value='/resources/css/style.css'/>" rel="stylesheet" type="text/css" media="all"/>
+    <link href="<c:url value="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"/>" rel="stylesheet">
     <script type="application/x-javascript"> addEventListener("load", function () {
         setTimeout(hideURLbar, 0);
     }, false);

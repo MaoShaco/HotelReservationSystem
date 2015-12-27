@@ -7,7 +7,7 @@ import java.util.Collection;
  * Created by Mao Shaco on 12/3/2015.
  */
 @Entity
-@Table(name = "client", schema = "", catalog = "hrs")
+@Table(name = "client", schema = "hrs", catalog = "")
 public class ClientEntity {
     private int id;
     private String name;
@@ -15,6 +15,7 @@ public class ClientEntity {
     private String email;
     private String cardNumber;
     private Collection<RequestEntity> requestsById;
+    private ProfileEntity profileById;
 
     @Id
     @Column(name = "id")
@@ -89,5 +90,15 @@ public class ClientEntity {
 
     public void setRequestsById(Collection<RequestEntity> requestsById) {
         this.requestsById = requestsById;
+    }
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "profile_id", referencedColumnName = "id", nullable = false)
+    public ProfileEntity getProfile() {
+        return profileById;
+    }
+
+    public void setProfile(ProfileEntity profileById) {
+        this.profileById = profileById;
     }
 }
